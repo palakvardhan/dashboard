@@ -5,11 +5,11 @@ Usage:
   python refresh.py            # update index.html with fresh data
   python refresh.py --discover # list all Metabase cards to find missing IDs
 """
-import urllib.request, json, re, datetime, sys
+import urllib.request, json, re, datetime, sys, os
 
 MB_KEY = 'mb_1dsbxsJfyROPsVyNpifJ8hTTlIDG85+qNKRo91KDnb4='
 BASE   = 'https://metabase.wiom.in/api'
-HTML   = 'C:/Users/Palak Vardhan/dashboard/index.html'
+HTML   = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'index.html')
 
 # ── Card IDs ─────────────────────────────────────────────────────────────────
 # Run `python refresh.py --discover` to list all cards and fill in the Nones.
